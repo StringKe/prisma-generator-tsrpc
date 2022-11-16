@@ -16,7 +16,7 @@ test('model generation', async () => {
   const sampleDMMF = await getSampleDMMF()
   const models = sampleDMMF.datamodel.models
     .map((model) => {
-      return genModel(model)
+      return genModel(model as never)
     })
     .join('\n')
   expect(models).toMatchSnapshot()
