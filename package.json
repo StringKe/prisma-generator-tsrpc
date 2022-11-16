@@ -1,5 +1,5 @@
 {
-  "name": "prisma-generator-tsrpc",
+  "name": "@stringke/prisma-generator-tsrpc",
   "description": "tsrpc support",
   "version": "1.0.0",
   "main": "dist/generator.js",
