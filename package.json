@@ -33,6 +33,7 @@
     "@types/prettier": "^2.7.1",
     "husky": "8.0.2",
     "jest": "^29.3.1",
+    "semantic-release": "^19.0.5",
     "ts-jest": "^29.0.3"
   },
   "homepage": "https://github.com/StringKe/prisma-generator-tsrpc",
