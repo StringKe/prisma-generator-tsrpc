@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum generation 1`] = `
+"export enum NOTIFICATION_TYPE {
+    NEW_POSTS = "newPosts",
+    NEW_COMMENTS = "newComments",
+    NEW_FOLLOWERS = "newFollowers",
+    REPLY = "reply",
+    HEART_ON_POST = "heartOnPost",
+    HEART_ON_COMMENT = "heartOnComment",
+    HEART_ON_REPLY = "heartOnReply"
+}
+export enum LANGUAGE {
+    TYPESCRIPT = "Typescript",
+    JAVASCRIPT = "Javascript",
+    RUST = "Rust",
+    GO = "Go",
+    PYTHON = "Python",
+    CPP = "Cpp"
+}
+export enum STATE {
+    ACTIVE = "Active",
+    PENDING = "Pending",
+    BANNED = "Banned"
+}"
+`;
+
+exports[`model generation 1`] = `
+[
+  "export interface User {
+    id: number;
+    email: string;
+    name?: string;
+}",
+  "export interface Product {
+    id: number;
+    title: string;
+    desc: string;
+    images: any;
+    isShown?: boolean;
+    stock?: number;
+    type: STATE;
+    averageRating?: number;
+    categoryId: number;
+    companyId: number;
+    category: Category;
+    company: Company;
+    createdAt: Date;
+    updatedAt: Date;
+}",
+  "export interface Category {
+    id: number;
+    products: Product[];
+}",
+  "export interface Company {
+    id: number;
+    name: string;
+    totalIncome: number;
+    lat: number;
+    lng: number;
+    by: Buffer;
+    products: Product[];
+}",
+]
+`;

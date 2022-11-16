@@ -33,3 +33,35 @@ enum State {
   Pending
   Banned
 }
+
+model Product {
+  id            Int         @id
+  title         String      @db.VarChar(255)
+  desc          String      @db.VarChar(1024)
+  images        Json        @db.Json
+  isShown       Boolean?    @default(false)
+  stock         Int?        @default(0)
+  type          State
+  averageRating Float?
+  categoryId    Int
+  companyId     Int
+  category      Category    @relation(fields: [categoryId], references: [id])
+  company       Company     @relation(fields: [companyId], references: [id])
+  createdAt     DateTime    @default(now()) @db.Timestamp(6)
+  updatedAt     DateTime    @updatedAt @db.Timestamp(6)
+}
+
+model Category {
+  id       Int       @id
+  products Product[]
+}
+
+model Company {
+  id          Int       @id
+  name        String
+  totalIncome BigInt
+  lat         Decimal
+  lng         Decimal
+  by          Bytes
+  products    Product[]
+}
