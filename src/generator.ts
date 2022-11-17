@@ -28,12 +28,12 @@ generatorHandler({
       .map((enumInfo) => {
         return genEnum(enumInfo)
       })
-      .join('\n')
+      .join('\n\n')
     const models = options.dmmf.datamodel.models
       .map((model) => {
         return genModel(model)
       })
-      .join('\n')
+      .join('\n\n')
 
     await fs.writeFile(
       `${outputDir}/index.ts`,
