@@ -1,9 +1,10 @@
 import { DMMF } from '@prisma/generator-helper'
 import * as ts from 'typescript'
 
-export const genModel = ({ name, fields }: DMMF.Model) => {
+export const genModel = ({ name, fields, documentation }: DMMF.Model) => {
   const fieldDeclarations: ts.PropertySignature[] = fields.map((field) => {
     const fieldName = field.name
+
     let fieldType = 'any'
     if (field.kind === 'enum') {
       fieldType = field.type
@@ -30,7 +31,7 @@ export const genModel = ({ name, fields }: DMMF.Model) => {
     const isOptional = !field.isRequired
     const isList = field.isList
 
-    return ts.factory.createPropertySignature(
+    const propertySignature = ts.factory.createPropertySignature(
       undefined,
       fieldName,
       isOptional
@@ -42,6 +43,16 @@ export const genModel = ({ name, fields }: DMMF.Model) => {
           )
         : ts.factory.createTypeReferenceNode(fieldType),
     )
+
+    if (field.documentation) {
+      ts.addSyntheticLeadingComment(
+        propertySignature,
+        ts.SyntaxKind.MultiLineCommentTrivia,
+        ` ${field.documentation} `,
+        true,
+      )
+    }
+    return propertySignature
   })
 
   const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
@@ -50,6 +61,13 @@ export const genModel = ({ name, fields }: DMMF.Model) => {
     undefined,
     undefined,
     fieldDeclarations,
+  )
+
+  ts.addSyntheticLeadingComment(
+    interfaceDeclaration,
+    ts.SyntaxKind.MultiLineCommentTrivia,
+    ` Model ${documentation} `,
+    true,
   )
 
   const printer = ts.createPrinter()
