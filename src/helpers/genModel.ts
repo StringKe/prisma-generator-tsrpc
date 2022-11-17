@@ -1,17 +1,14 @@
 import { DMMF } from '@prisma/generator-helper'
-import _ from 'lodash'
 import * as ts from 'typescript'
 
 export const genModel = ({ name, fields }: DMMF.Model) => {
-  const upperCaseName = _.upperFirst(_.camelCase(name))
-
   const fieldDeclarations: ts.PropertySignature[] = fields.map((field) => {
-    const fieldName = _.camelCase(field.name)
+    const fieldName = field.name
     let fieldType = 'any'
     if (field.kind === 'enum') {
-      fieldType = _.camelCase(field.type).toUpperCase()
+      fieldType = field.type
     } else if (field.kind === 'object') {
-      fieldType = _.upperFirst(_.camelCase(field.type))
+      fieldType = field.type
     } else if (field.kind === 'scalar') {
       if (['Int', 'Float', 'Decimal', 'BigInt'].includes(field.type)) {
         fieldType = 'number'
@@ -49,7 +46,7 @@ export const genModel = ({ name, fields }: DMMF.Model) => {
 
   const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
     [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
-    ts.factory.createIdentifier(upperCaseName),
+    ts.factory.createIdentifier(name),
     undefined,
     undefined,
     fieldDeclarations,
