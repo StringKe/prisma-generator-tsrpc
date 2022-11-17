@@ -1,7 +1,7 @@
 {
   "name": "@stringke/prisma-generator-tsrpc",
   "description": "tsrpc support",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/generator.js",
   "license": "MIT",
   "bin": {
@@ -13,7 +13,7 @@
   "scripts": {
     "start": "node dist/bin.js",
     "dev": "npx tsc -w",
-    "build": "npx tsc",
+    "build": "rm -rf dist && npx tsc",
     "prepack": "yarn build",
     "test": "jest",
     "prepare": "husky install"
