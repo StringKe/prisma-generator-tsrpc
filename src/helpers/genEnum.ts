@@ -6,14 +6,29 @@ export const genEnum = ({
   values,
   documentation,
 }: DMMF.DatamodelEnum) => {
-  const enumValues: ts.EnumMember[] = values.map((value) => {
-    return ts.factory.createEnumMember(ts.factory.createIdentifier(value.name))
+  const enumValues = values.map((value) => {
+    return ts.factory.createPropertySignature(
+      undefined,
+      ts.factory.createIdentifier(value.name),
+      undefined,
+      ts.factory.createLiteralTypeNode(
+        ts.factory.createStringLiteral(value.name),
+      ),
+    )
   })
 
-  const enumDeclaration = ts.factory.createEnumDeclaration(
+  const enumDeclaration = ts.factory.createVariableStatement(
     [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
-    ts.factory.createIdentifier(name),
-    enumValues,
+    ts.factory.createVariableDeclarationList(
+      [
+        ts.factory.createVariableDeclaration(
+          ts.factory.createIdentifier(name),
+          undefined,
+          ts.factory.createTypeLiteralNode(enumValues),
+        ),
+      ],
+      ts.NodeFlags.Const,
+    ),
   )
 
   ts.addSyntheticLeadingComment(
@@ -24,9 +39,32 @@ export const genEnum = ({
   )
 
   const printer = ts.createPrinter()
-  return printer.printNode(
+  const enumStr = printer.printNode(
     ts.EmitHint.Unspecified,
     enumDeclaration,
     ts.createSourceFile('', '', ts.ScriptTarget.Latest),
   )
+
+  const typeDeclaration = ts.factory.createTypeAliasDeclaration(
+    [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
+    ts.factory.createIdentifier(name),
+    [],
+    ts.factory.createIndexedAccessTypeNode(
+      ts.factory.createParenthesizedType(
+        ts.factory.createTypeQueryNode(ts.factory.createIdentifier(name)),
+      ),
+      ts.factory.createTypeOperatorNode(
+        ts.SyntaxKind.KeyOfKeyword,
+        ts.factory.createTypeQueryNode(ts.factory.createIdentifier(name)),
+      ),
+    ),
+  )
+
+  const typeStr = printer.printNode(
+    ts.EmitHint.Unspecified,
+    typeDeclaration,
+    ts.createSourceFile('', '', ts.ScriptTarget.Latest),
+  )
+
+  return `${enumStr}\n\n${typeStr}\n\n`
 }

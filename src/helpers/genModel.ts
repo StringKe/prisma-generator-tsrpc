@@ -31,17 +31,20 @@ export const genModel = ({ name, fields, documentation }: DMMF.Model) => {
     const isOptional = !field.isRequired
     const isList = field.isList
 
-    const propertySignature = ts.factory.createPropertySignature(
-      undefined,
-      fieldName,
-      isOptional
-        ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
-        : undefined,
+    const nodes = [
       isList
         ? ts.factory.createArrayTypeNode(
             ts.factory.createTypeReferenceNode(fieldType),
           )
         : ts.factory.createTypeReferenceNode(fieldType),
+      isOptional ? ts.factory.createNull() : undefined,
+    ].filter(Boolean) as ts.TypeNode[]
+
+    const propertySignature = ts.factory.createPropertySignature(
+      undefined,
+      fieldName,
+      undefined,
+      ts.factory.createUnionTypeNode(nodes),
     )
 
     if (field.documentation) {
@@ -55,12 +58,11 @@ export const genModel = ({ name, fields, documentation }: DMMF.Model) => {
     return propertySignature
   })
 
-  const interfaceDeclaration = ts.factory.createInterfaceDeclaration(
+  const interfaceDeclaration = ts.factory.createTypeAliasDeclaration(
     [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
     ts.factory.createIdentifier(name),
-    undefined,
-    undefined,
-    fieldDeclarations,
+    [],
+    ts.factory.createTypeLiteralNode(fieldDeclarations),
   )
 
   ts.addSyntheticLeadingComment(

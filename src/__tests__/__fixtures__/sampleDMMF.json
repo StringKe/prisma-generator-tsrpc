@@ -156,7 +156,7 @@
             "documentation": "手机区号"
           },
           {
-            "name": "phoneVerififedAt",
+            "name": "phoneVerifiedAt",
             "kind": "scalar",
             "isList": false,
             "isRequired": false,
@@ -2041,7 +2041,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -2873,7 +2873,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": false,
               "inputTypes": [
@@ -3501,7 +3501,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -4333,7 +4333,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": false,
               "inputTypes": [
@@ -4982,7 +4982,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -13394,7 +13394,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -14044,7 +14044,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -14706,7 +14706,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -15578,7 +15578,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -16420,7 +16420,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -17030,7 +17030,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -17850,7 +17850,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -29367,7 +29367,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": false,
               "inputTypes": [
@@ -30048,7 +30048,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": false,
               "inputTypes": [
@@ -30538,7 +30538,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": false,
               "inputTypes": [
@@ -51334,7 +51334,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -51971,7 +51971,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -53149,7 +53149,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -54008,7 +54008,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -56777,7 +56777,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -57414,7 +57414,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -58347,7 +58347,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -59206,7 +59206,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -60023,7 +60023,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -60660,7 +60660,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -61451,7 +61451,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -62310,7 +62310,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -63127,7 +63127,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -63764,7 +63764,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -64555,7 +64555,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -65414,7 +65414,7 @@
               ]
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "isRequired": false,
               "isNullable": true,
               "inputTypes": [
@@ -77963,7 +77963,7 @@
               }
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "args": [],
               "isNullable": true,
               "outputType": {
@@ -79682,7 +79682,7 @@
               }
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "args": [],
               "isNullable": false,
               "outputType": {
@@ -80357,7 +80357,7 @@
               }
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "args": [],
               "isNullable": true,
               "outputType": {
@@ -80732,7 +80732,7 @@
               }
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "args": [],
               "isNullable": true,
               "outputType": {
@@ -83774,7 +83774,7 @@
               }
             },
             {
-              "name": "phoneVerififedAt",
+              "name": "phoneVerifiedAt",
               "args": [],
               "isNullable": true,
               "outputType": {
@@ -85545,7 +85545,7 @@
             "avatar",
             "phone",
             "phoneCode",
-            "phoneVerififedAt",
+            "phoneVerifiedAt",
             "isMember",
             "memberLevel",
             "memberExpiredAt",

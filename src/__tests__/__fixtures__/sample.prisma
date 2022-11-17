@@ -31,7 +31,7 @@ model User {
   /// 手机区号
   phoneCode             String?               @default("+86")
   /// 手机是否验证
-  phoneVerififedAt      DateTime?
+  phoneVerifiedAt      DateTime?
   /// 是否会员
   isMember              Boolean               @default(false)
   /// 会员等级
