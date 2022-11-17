@@ -3,7 +3,7 @@ import {
   generatorHandler,
   GeneratorOptions,
 } from '@prisma/generator-helper'
-import { logger, parseEnvValue } from '@prisma/sdk'
+import { logger, parseEnvValue } from '@prisma/internals'
 import { GENERATOR_NAME } from './constants'
 import { promises as fs } from 'fs'
 import { genEnum } from './helpers/genEnum'

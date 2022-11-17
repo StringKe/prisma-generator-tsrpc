@@ -1,4 +1,4 @@
-import { getDMMF, getSchemaSync } from '@prisma/sdk'
+import { getDMMF, getSchemaSync } from '@prisma/internals'
 import path from 'path'
 
 const samplePrismaSchema = getSchemaSync(
