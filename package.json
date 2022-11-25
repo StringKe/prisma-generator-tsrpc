@@ -1,7 +1,7 @@
 {
   "name": "@stringke/prisma-generator-tsrpc",
   "description": "tsrpc support",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "main": "dist/generator.js",
   "license": "MIT",
   "bin": {
