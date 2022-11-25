@@ -1,7 +1,18 @@
 import { DMMF } from '@prisma/generator-helper'
 import * as ts from 'typescript'
 
-export const genModel = ({ name, fields, documentation }: DMMF.Model) => {
+export const genModel = (
+  { name, fields, documentation }: DMMF.Model,
+  includeRelation = true,
+) => {
+  fields = includeRelation
+    ? fields
+    : fields.filter((field) => {
+        return (
+          field.relationName === undefined || field.relationName.length === 0
+        )
+      })
+
   const fieldDeclarations: ts.PropertySignature[] = fields.map((field) => {
     const fieldName = field.name
 
@@ -60,7 +71,7 @@ export const genModel = ({ name, fields, documentation }: DMMF.Model) => {
 
   const interfaceDeclaration = ts.factory.createTypeAliasDeclaration(
     [ts.factory.createModifier(ts.SyntaxKind.ExportKeyword)],
-    ts.factory.createIdentifier(name),
+    ts.factory.createIdentifier(!includeRelation ? `${name}` : `${name}Full`),
     [],
     ts.factory.createTypeLiteralNode(fieldDeclarations),
   )

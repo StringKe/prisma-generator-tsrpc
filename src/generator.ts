@@ -8,6 +8,7 @@ import { GENERATOR_NAME } from './constants'
 import { promises as fs } from 'fs'
 import { genEnum } from './helpers/genEnum'
 import { genModel } from './helpers/genModel'
+import { genRelationModel } from './helpers/genRelationModel'
 
 const { version } = require('../package.json')
 
@@ -31,7 +32,10 @@ generatorHandler({
       .join('\n\n')
     const models = options.dmmf.datamodel.models
       .map((model) => {
-        return genModel(model)
+        const fullModel = genModel(model)
+        const cleanModel = genModel(model, false)
+        const modelRelation = genRelationModel(model)
+        return `${fullModel}\n\n${cleanModel}\n\n${modelRelation}`
       })
       .join('\n\n')
 
