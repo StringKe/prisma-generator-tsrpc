@@ -32,7 +32,9 @@ export const genRelationModel = ({
       const propertySignature = ts.factory.createPropertySignature(
         undefined,
         fieldName,
-        undefined,
+        isOptional
+          ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
+          : undefined,
         ts.factory.createUnionTypeNode(nodes),
       )
 

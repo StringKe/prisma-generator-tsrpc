@@ -51,10 +51,13 @@ export const genModel = (
       isOptional ? ts.factory.createNull() : undefined,
     ].filter(Boolean) as ts.TypeNode[]
 
+    // value?: type | null
     const propertySignature = ts.factory.createPropertySignature(
       undefined,
       fieldName,
-      undefined,
+      isOptional
+        ? ts.factory.createToken(ts.SyntaxKind.QuestionToken)
+        : undefined,
       ts.factory.createUnionTypeNode(nodes),
     )
 
